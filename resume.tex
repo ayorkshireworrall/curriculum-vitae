@@ -1,0 +1,150 @@
+\documentclass[]{resume-openfont}
+
+\pagestyle{fancy}
+\resetHeaderAndFooter
+
+%--------------------------------------------------------------
+% Convenience command - make it easy to fill template
+
+% Create job position command. Parameters: company, position, location, when
+\newcommand{\resumeHeading}[4]{\runsubsection{\uppercase{#1}}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine}
+
+% Create education heading. Parameters: Name, degree, location, when
+\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3 | #4}\\
+\descript{#2}\fakeNewLine}
+
+% Create project heading. Parameters: Name, link, Tech stack
+\newcommand{\projectHeading}[3]{\Project{#1}{#2}
+\descript{#3}\\}
+
+\newcommand{\projectHeadingNoLink}[2]{\ProjectNoLink{#1}
+\descript{#2}\\}
+
+\newcommand{\projectHeadingWithDate}[4]{\Project{#1}{#2}
+\descript{#3 | #4}\\}
+
+\newcommand{\projectHeadingWithDateNoLink}[3]{\ProjectNoLink{#1}
+\descript{#2 | #3}\\}
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
+
+% Parameters: courses
+\newcommand{\teacherAssistant}[1]{\textbf{Teacher Assistant (TA):} #1}
+ 
+%--------------------------------------------------------------
+\begin{document}
+
+%--------------------------------------------------------------
+%     Profile
+%--------------------------------------------------------------
+\newcommand{\yourName}{Alexander Worrall}
+% How you want it to show up on the resume
+\newcommand{\yourWebsite}{TODO.com}
+% vs how you want it to show up. If it's the same you can just replace "\yourWebsiteLink" with "yourWebsite"
+\newcommand{\yourWebsiteLink}{https://TODO.com}
+\newcommand{\yourEmail}{a.worrall2512@googlemail.com}
+\newcommand{\yourPhone}{+447455079759}
+\newcommand{\githubUserName}{ayorkshireworrall}
+\newcommand{\linkedInUserName}{Alexander Worrall}
+\newcommand{\linkedInUrl}{https://www.linkedin.com/mwlite/in/alexander-worrall-51b1881a5}
+
+% An alternate profile section 
+% \alignProfileTable
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%     \ralewayBold{\href{\yourWebsiteLink}{\Large \yourName}} & 
+%     Email : \href{mailto:\yourEmail}{\yourEmail}
+%     \\
+%     \href{https://github.com/\githubUserName}{GitHub://\githubUserName} & 
+%     Mobile : \yourPhone
+%     \\
+%     \href{https://www.linkedin.com/in/\linkedInUserName}{LinkedIn://\linkedInUserName} & Website : \href{\yourWebsiteLink}{\yourWebsite}
+%     \\
+% \end{tabular*}
+
+\begin{center}
+    \Huge \scshape \latoRegular{\yourName} \\ \vspace{1pt}
+    \small \href{mailto:\yourEmail}{\underline{\yourEmail}}  $|$  \yourPhone $|$ 
+    \href{\linkedInUrl}{\underline{linkedIn/\linkedInUserName}} $|$
+    \href{https://github.com/\githubUserName}{\underline{github/\githubUserName}} 
+    % $|$ \href{\yourWebsiteLink}{\underline{\yourWebsite}}
+\end{center}
+
+%--------------------------------------------------------------
+%     Education
+%--------------------------------------------------------------
+\section{Education}
+% Put school first and degree second if your school is reputable
+\educationHeading{Durham University}{Undergraduate Mathematics (BSc. Honours)}{2:1}{Jun 2016}
+
+\educationHeading{Ripon Grammar School}{A levels: Maths, Further Maths, Physics, History}{A*AAA}{Jul 2013}
+\sectionsep
+
+%--------------------------------------------------------------
+%     Experience
+%--------------------------------------------------------------
+\section{Work Experience}
+\resumeHeading{Deloitte SAP+}{Senior Consultant}{London}{Oct 2020- Present}
+\begin{bullets}
+Worked billable hours on high profiles public sector in client facing roles. Responsible for educating and supporting junior team members in addition to delivering new features for clients. Maintained codebases, infrastructure and CI/CD pipelines for various projects.
+\end{bullets}
+\sectionsep
+
+\resumeHeading{Keytree}{Graduate Software Engineer}{London}{Oct 2017- Oct 2020}
+\begin{bullets}
+Steep learning curve to gain an understanding of software and cloud technologies to become billable and work face to face with clients within 3 months of joining despite no prior software experience. 
+\end{bullets}
+\sectionsep
+
+%--------------------------------------------------------------
+%     Projects
+%--------------------------------------------------------------
+\section{Projects}
+
+\projectHeadingWithDateNoLink{GLA OPS}{Java, Spring, AngularJS, Postgres, AWS, Selenium}{Jan 2021 - Jan 2022}
+Senior developer on an agile project to produce grant application and grant distribution system for the Greater London Authority. Allows external applicants to apply for programmes that are highly customisable by internal users. Applicant projects are fully audited and version controlled with automated payments based on approval criteria. System built to be robust as there are nearly 3000 organisations who have requested £10bn in funding, of which £6bn has been granted and paid via the application.\\
+\sectionsep
+  
+\projectHeadingWithDateNoLink{NE OPS}{Java, Spring, AngularJS, Postgres, AWS, Selenium}{Oct 2020 - Jan 2021}
+An OPS implementation using the GLA OPS open source code. Done as a solo project for a smaller client (North of Tyne Combined Authority). Was required to set up AWS infrastructure, deployment pipeline and configure code to rebrand the application. Specific requirements also required a few code changes to meet their business needs.
+\sectionsep
+
+\projectHeadingWithDateNoLink{Plan Zheroes}{NodeJS, ReactJS, Postgres, AWS, Kubernetes}{Apr 2020-Oct 2020}
+A pro bono legacy project to establish a network of volunteers distributing excess food from businesses to charities who required it. Had to migrate the project from broken infrastructure to a Kubernetes cluster and configure a new build pipeline. Did a security audit of vulnerable APIs and fixed existing defects in both the front end ReactJS code and backend NodeJS code.
+\sectionsep
+
+\projectHeadingWithDateNoLink{GRP2}{Java, Liferay, OSGI, MySQL, ReactJS, Selenium}{Jan 2018-Apr 2020}
+A customised Liferay implementation of a content management system for a global UK based car manufacturer. The application served as an employee's single point of sign on for their tool-suite as well as targeting specific content to individual user types based on their complex structure. Responsible for implementing the automated e2e regression testing using selenium, managing OSGI dependencies and built an automated process to provision sites, organisations and users based on csv inputs.
+\sectionsep
+
+% Example using bullets and dates 
+% \projectHeadingWithDate{Hogwart\textquotesingle{}s Library Management System}{https://github.com/Aarif123456/hogwartslibrary}{PHP, JavaScript, HTML, CSS, MySQL}{Aug 2019}
+% \begin{bullets}
+    % \item A full-stack library management system, where users can manage books and holds on their accounts. Users can search the library\textquotesingle{}s catalogue, which has every book mentioned in the Harry Potter series. The system distinguishes between 4 users. For examples, librarians who can also check or return books on behalf of users.\\
+% \end{bullets}
+% \sectionsep
+  
+
+%--------------------------------------------------------------
+%     Skills
+%--------------------------------------------------------------
+\section{Skills}
+\begin{skillList}
+    \singleItem{Proficient Languages:}{Java, SQL}
+    \\
+    \singleItem{Competent Languages:}{ReactJS, JavaScript, TypeScript, HTML/CSS}
+    \\
+    \singleItem{Learning Languages:}{Rust}
+    \\
+    \singleItem{Technology:}{Teamcity, Git, AWS, GCP, Docker, Postgres, Kubernetes}
+\end{skillList}
+
+% A more concise alternate 
+% \begin{skillList}
+%     \doubleItem{Languages:}{Java, C++, Python, C\#, PHP, Prolog, Bash, C, Racket}%
+%     {Databases:}{SQL, MongoDB, Neo4j, DynamoDB}
+%     \\
+%     \doubleItem{Web Development:}{JavaScript, TypeScript, React, HTML/CSS}
+%     {Technology:}{Git, AWS, GCP, Azure, Docker, \LaTeX}%
+% \end{skillList}
+\end{document}
